@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Calabozos y Dragones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo">
+                <img src="https://i.imgur.com/JjQY9zX.png" alt="Calabozos y Dragones" class="logo-img">
+                <h1>Generador de Personajes</h1>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab active" id="loginTab">Ingresar</button>
+                <button class="tab" id="registerTab">Registrarse</button>
+            </div>
+            
+            <form id="loginForm" class="auth-form active">
+                <div class="form-group">
+                    <label for="loginUsername"><i class="fas fa-user"></i> Usuario</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword"><i class="fas fa-lock"></i> Contraseña</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Ingresar</button>
+            </form>
+            
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="regUsername"><i class="fas fa-user"></i> Usuario</label>
+                    <input type="text" id="regUsername" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regEmail"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regPassword"><i class="fas fa-lock"></i> Contraseña</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="regConfirmPassword"><i class="fas fa-lock"></i> Confirmar Contraseña</label>
+                    <input type="password" id="regConfirmPassword" required>
+                </div>
+                
+                <button type="submit" class="auth-btn">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Personajes - Calabozos y Dragones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="https://i.imgur.com/JjQY9zX.png" alt="Logo" class="nav-logo">
+            <span>Calabozos y Dragones</span>
+        </div>
+        <div class="nav-links">
+            <a href="home.html"><i class="fas fa-home"></i> Inicio</a>
+            <a href="creator.html"><i class="fas fa-plus"></i> Crear Personaje</a>
+            <a href="gallery.html" class="active"><i class="fas fa-users"></i> Mis Personajes</a>
+            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        </div>
+        <button class="nav-toggle"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <main class="gallery-container">
+        <div class="gallery-header">
+            <h1><i class="fas fa-users"></i> Mis Personajes</h1>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <i class="fas fa-user-plus"></i>
+                    <span id="totalChars">0</span> Personajes
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-dragon"></i>
+                    Raza favorita: <span id="favRace">-</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-shield-alt"></i>
+                    Clase favorita: <span id="favClass">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-filter">
+            <div class="search-box">
+                <input type="text" id="charSearch" placeholder="Buscar personaje...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-group">
+                <label for="raceFilter"><i class="fas fa-filter"></i> Filtrar por:</label>
+                <select id="raceFilter">
+                    <option value="all">Todas las razas</option>
+                    <!-- Razas se cargarán dinámicamente -->
+                </select>
+                <select id="classFilter">
+                    <option value="all">Todas las clases</option>
+                    <!-- Clases se cargarán dinámicamente -->
+                </select>
+            </div>
+        </div>
+
+        <div class="characters-grid" id="charactersContainer">
+            <!-- Personajes se cargarán dinámicamente -->
+        </div>
+
+        <!-- Modal para detalles -->
+        <div id="detailModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-header">
+                    <h2 id="modalCharName">Nombre del Personaje</h2>
+                    <div class="char-meta">
+                        <span id="modalCharRace">Raza: -</span>
+                        <span id="modalCharClass">Clase: -</span>
+                        <span id="modalCharLevel">Nivel: 1</span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-column">
+                        <div class="char-image">
+                            <img id="modalCharImage" src="https://i.imgur.com/8Km9tLL.jpg" alt="Personaje">
+                        </div>
+                        <div class="char-equipment">
+                            <h3><i class="fas fa-shield-alt"></i> Equipamiento</h3>
+                            <ul id="equipmentList">
+                                <!-- Equipo se cargará dinámicamente -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="modal-column">
+                        <div class="char-stats">
+                            <h3><i class="fas fa-chart-bar"></i> Estadísticas</h3>
+                            <div class="stats-grid" id="modalStats">
+                                <!-- Stats se cargarán dinámicamente -->
+                            </div>
+                        </div>
+                        <div class="char-abilities">
+                            <h3><i class="fas fa-magic"></i> Habilidades</h3>
+                            <div class="abilities-list" id="abilitiesList">
+                                <!-- Habilidades se cargarán dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="printCharBtn" class="modal-btn">
+                        <i class="fas fa-print"></i> Imprimir Ficha
+                    </button>
+                    <button id="exportCharBtn" class="modal-btn">
+                        <i class="fas fa-file-export"></i> Exportar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2023 Generador de Personajes - Calabozos y Dragones</p>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
