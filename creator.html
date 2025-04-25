@@ -15,30 +15,29 @@
             <span>Calabozos y Dragones</span>
         </div>
         <div class="nav-links">
-            <a href="home.html"><i class="fas fa-home"></i> Inicio</a>
-            <a href="creator.html" class="active"><i class="fas fa-plus"></i> Crear Personaje</a>
-            <a href="gallery.html"><i class="fas fa-users"></i> Mis Personajes</a>
-            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Salir</a>
+            <a href="home.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
+            <a href="creator.html" class="nav-link active"><i class="fas fa-plus"></i> Crear Personaje</a>
+            <a href="gallery.html" class="nav-link"><i class="fas fa-users"></i> Mis Personajes</a>
+            <a href="#" id="logoutBtn" class="nav-link"><i class="fas fa-sign-out-alt"></i> Salir</a>
         </div>
         <button class="nav-toggle"><i class="fas fa-bars"></i></button>
     </nav>
 
     <main class="creator-container">
-        <h1>Creador de Personajes</h1>
+        <h1 class="creator-title">Creador de Personajes</h1>
         
         <div class="creator-grid">
-            <!-- Panel de opciones -->
             <div class="options-panel">
-                <div class="section" id="basicSection">
-                    <h2><i class="fas fa-user"></i> Información Básica</h2>
+                <div class="creator-section" id="basicSection">
+                    <h2 class="section-title"><i class="fas fa-user"></i> Información Básica</h2>
                     <div class="form-group">
                         <label for="charName">Nombre del Personaje</label>
-                        <input type="text" id="charName" placeholder="Ej: Aragorn">
+                        <input type="text" id="charName" class="form-input" placeholder="Ej: Aragorn">
                     </div>
                     
                     <div class="form-group">
                         <label for="charGender">Género</label>
-                        <select id="charGender">
+                        <select id="charGender" class="form-input">
                             <option value="male">Masculino</option>
                             <option value="female">Femenino</option>
                             <option value="other">Otro</option>
@@ -46,30 +45,38 @@
                     </div>
                 </div>
                 
-                <div class="section" id="raceSection">
-                    <h2><i class="fas fa-paw"></i> Raza</h2>
+                <div class="creator-section" id="raceSection">
+                    <h2 class="section-title"><i class="fas fa-paw"></i> Raza</h2>
                     <div class="search-box">
-                        <input type="text" id="raceSearch" placeholder="Buscar raza...">
-                        <i class="fas fa-search"></i>
+                        <input type="text" id="raceSearch" class="search-input" placeholder="Buscar raza...">
+                        <i class="fas fa-search search-icon"></i>
                     </div>
                     <div class="options-list" id="raceList">
                         <!-- Razas se cargarán dinámicamente -->
                     </div>
                 </div>
                 
-                <!-- Más secciones para clase, equipo, habilidades, etc. -->
+                <div class="creator-section" id="classSection">
+                    <h2 class="section-title"><i class="fas fa-shield-alt"></i> Clase</h2>
+                    <div class="search-box">
+                        <input type="text" id="classSearch" class="search-input" placeholder="Buscar clase...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="options-list" id="classList">
+                        <!-- Clases se cargarán dinámicamente -->
+                    </div>
+                </div>
             </div>
             
-            <!-- Vista previa -->
             <div class="preview-panel">
                 <div class="preview-card">
                     <div class="preview-image">
-                        <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Preview" id="charImage">
+                        <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Preview" id="charImage" class="preview-img">
                     </div>
                     <div class="preview-details">
-                        <h2 id="previewName">Nombre del Personaje</h2>
-                        <p id="previewRace">Raza: No seleccionada</p>
-                        <p id="previewClass">Clase: No seleccionada</p>
+                        <h2 id="previewName" class="preview-name">Nombre del Personaje</h2>
+                        <p id="previewRace" class="preview-text">Raza: No seleccionada</p>
+                        <p id="previewClass" class="preview-text">Clase: No seleccionada</p>
                         <div class="stats-grid" id="statsPreview">
                             <!-- Estadísticas se mostrarán aquí -->
                         </div>
@@ -84,6 +91,7 @@
     </main>
 
     <script src="js/api.js"></script>
+    <script src="js/storage.js"></script>
     <script src="js/creator.js"></script>
     <script src="js/auth.js"></script>
 </body>

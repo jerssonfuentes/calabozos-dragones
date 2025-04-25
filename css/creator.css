@@ -1,13 +1,15 @@
+/* Estilos base */
 .creator-container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
-.creator-container h1 {
+.creator-title {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--primary);
+    color: #4e3629;
+    font-size: 2.5rem;
 }
 
 .creator-grid {
@@ -29,20 +31,23 @@
     align-self: start;
 }
 
-.section {
+/* Secciones del creador */
+.creator-section {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
 }
 
-.section h2 {
-    color: var(--secondary);
+.section-title {
+    color: #4e3629;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 1.2rem;
 }
 
+/* Formularios */
 .form-group {
     margin-bottom: 1rem;
 }
@@ -51,29 +56,37 @@
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    color: #555;
 }
 
-.form-group input, .form-group select {
+.form-input {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+    transition: all 0.3s;
 }
 
+.form-input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+/* Búsqueda */
 .search-box {
     position: relative;
     margin-bottom: 1rem;
 }
 
-.search-box input {
+.search-input {
     width: 100%;
-    padding: 0.8rem 2rem 0.8rem 1rem;
+    padding: 0.8rem 2.5rem 0.8rem 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.search-box i {
+.search-icon {
     position: absolute;
     right: 1rem;
     top: 50%;
@@ -81,6 +94,7 @@
     color: #777;
 }
 
+/* Lista de opciones */
 .options-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -112,9 +126,10 @@
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--accent);
+    border: 2px solid #d4af37;
 }
 
+/* Vista previa */
 .preview-card {
     background-color: white;
     border-radius: 10px;
@@ -123,22 +138,28 @@
     text-align: center;
 }
 
-.preview-image img {
+.preview-image {
+    margin-bottom: 1.5rem;
+}
+
+.preview-img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid var(--accent);
-    margin-bottom: 1rem;
+    border: 5px solid #d4af37;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.preview-details h2 {
-    color: var(--primary);
+.preview-name {
+    color: #4e3629;
     margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
-.preview-details p {
+.preview-text {
     margin-bottom: 1rem;
+    color: #555;
 }
 
 .stats-grid {
@@ -155,12 +176,31 @@
     text-align: center;
 }
 
+/* Botón guardar */
 .save-btn {
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #d4af37, #f1c40f);
+    color: #2c3e50;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
     font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .creator-grid {
         grid-template-columns: 1fr;
@@ -169,5 +209,9 @@
     .preview-panel {
         position: static;
         margin-top: 2rem;
+    }
+    
+    .options-list {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 }

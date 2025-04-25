@@ -15,50 +15,56 @@
             <span>Calabozos y Dragones</span>
         </div>
         <div class="nav-links">
-            <a href="home.html" class="active"><i class="fas fa-home"></i> Inicio</a>
-            <a href="creator.html"><i class="fas fa-plus"></i> Crear Personaje</a>
-            <a href="gallery.html"><i class="fas fa-users"></i> Mis Personajes</a>
-            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Salir</a>
+            <a href="home.html" class="nav-link active"><i class="fas fa-home"></i> Inicio</a>
+            <a href="creator.html" class="nav-link"><i class="fas fa-plus"></i> Crear Personaje</a>
+            <a href="gallery.html" class="nav-link"><i class="fas fa-users"></i> Mis Personajes</a>
+            <a href="#" id="logoutBtn" class="nav-link"><i class="fas fa-sign-out-alt"></i> Salir</a>
         </div>
         <button class="nav-toggle"><i class="fas fa-bars"></i></button>
     </nav>
 
     <main class="landing-container">
-        <section class="hero">
+        <section class="hero-section">
             <div class="hero-content">
-                <h1>Generador de Personajes</h1>
-                <p>Crea y personaliza tus personajes para tus aventuras en Calabozos y Dragones</p>
-                <a href="creator.html" class="cta-btn">Comenzar a Crear</a>
+                <h1 class="hero-title">Forja tu leyenda</h1>
+                <p class="hero-text">Crea el personaje perfecto para tus aventuras en el mundo de Calabozos y Dragones</p>
+                <a href="creator.html" class="hero-btn">Comenzar Ahora</a>
             </div>
             <div class="hero-image">
-                <img src="https://i.imgur.com/5X6Qz9j.jpg" alt="Hero Image">
+                <img src="https://i.imgur.com/5X6Qz9j.jpg" alt="Aventura épica" class="hero-img">
             </div>
         </section>
 
-        <section class="features">
-            <h2>Características Principales</h2>
+        <section class="features-section">
+            <h2 class="section-title">Características Principales</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-user-plus"></i>
-                    <h3>Crea Personajes Únicos</h3>
-                    <p>Personaliza cada aspecto de tu personaje con nuestro sistema avanzado.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="feature-title">Crea Personajes Únicos</h3>
+                    <p class="feature-text">Personaliza cada aspecto de tu personaje con nuestro sistema avanzado.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-dragon"></i>
-                    <h3>Razas y Clases</h3>
-                    <p>Elige entre todas las razas y clases oficiales de D&D 5e.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-dragon"></i>
+                    </div>
+                    <h3 class="feature-title">Razas y Clases</h3>
+                    <p class="feature-text">Elige entre todas las razas y clases oficiales de D&D 5e.</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Equipamiento Completo</h3>
-                    <p>Selecciona armas, armaduras y objetos mágicos para tu personaje.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Equipamiento Completo</h3>
+                    <p class="feature-text">Selecciona armas, armaduras y objetos mágicos para tu personaje.</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>© 2023 Generador de Personajes - Calabozos y Dragones</p>
+        <p class="footer-text">© 2023 Generador de Personajes - Calabozos y Dragones</p>
     </footer>
 
     <script src="js/auth.js"></script>
