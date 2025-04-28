@@ -16,12 +16,26 @@ class DnDAPI {
             this.cache.set(endpoint, data);
             return data;
         } catch (error) {
-            console.error('API Error:', error);
-            throw new Error(`Failed to fetch ${endpoint}: ${error.message}`);
+            console.error(`API Error en ${endpoint}:`, error);
+            throw error;
         }
     }
 
-    // ... (métodos restantes se mantienen igual) ...
+    async getRaces() {
+        return this.fetchData('/races');
+    }
+
+    async getClasses() {
+        return this.fetchData('/classes');
+    }
+
+    async getRaceDetails(index) {
+        return this.fetchData(`/races/${index}`);
+    }
+
+    async getClassDetails(index) {
+        return this.fetchData(`/classes/${index}`);
+    }
 }
 
 export const dndApi = new DnDAPI();
