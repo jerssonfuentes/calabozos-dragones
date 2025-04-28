@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Calabozos y Dragones</title>
+    <title>Calabozos y Dragones - Crea tu aventura</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;500;600&family=MedievalSharp&display=swap">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" href="https://w7.pngwing.com/pngs/577/248/png-transparent-dungeons-dragons-unearthed-arcana-role-playing-game-logo-typing-miscellaneous-game-text.png" type="image/png">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-brand">
-            <img src="https://i.imgur.com/JjQY9zX.png" alt="Logo" class="nav-logo">
+            <img src="https://w7.pngwing.com/pngs/577/248/png-transparent-dungeons-dragons-unearthed-arcana-role-playing-game-logo-typing-miscellaneous-game-text.png" alt="Logo D&D" class="nav-logo">
             <span>Calabozos y Dragones</span>
         </div>
         <div class="nav-links">
-            <a href="home.html" class="nav-link active"><i class="fas fa-home"></i> Inicio</a>
-            <a href="creator.html" class="nav-link"><i class="fas fa-plus"></i> Crear Personaje</a>
-            <a href="gallery.html" class="nav-link"><i class="fas fa-users"></i> Mis Personajes</a>
-            <a href="#" id="logoutBtn" class="nav-link"><i class="fas fa-sign-out-alt"></i> Salir</a>
+            <a href="home.html" class="nav-link active"><i class="fas fa-dungeon"></i> Inicio</a>
+            <a href="creator.html" class="nav-link"><i class="fas fa-hat-wizard"></i> Crear Personaje</a>
+            <a href="gallery.html" class="nav-link"><i class="fas fa-scroll"></i> Mis Personajes</a>
+            <a href="#" id="logoutBtn" class="nav-link"><i class="fas fa-door-open"></i> Salir</a>
         </div>
         <button class="nav-toggle"><i class="fas fa-bars"></i></button>
     </nav>
@@ -26,12 +28,23 @@
     <main class="landing-container">
         <section class="hero-section">
             <div class="hero-content">
-                <h1 class="hero-title">Forja tu leyenda</h1>
-                <p class="hero-text">Crea el personaje perfecto para tus aventuras en el mundo de Calabozos y Dragones</p>
-                <a href="creator.html" class="hero-btn">Comenzar Ahora</a>
+                <h1 class="hero-title">¿Qué es Calabozos y Dragones?</h1>
+                <div class="game-description">
+                    <p class="hero-text">Calabozos y Dragones (D&D) es el juego de rol más famoso del mundo, donde tú y tus amigos crean personajes únicos para vivir aventuras épicas en mundos de fantasía.</p>
+                    
+                    <h3 class="subheading">¿Cómo se juega?</h3>
+                    <ol class="how-to-play">
+                        <li><span class="step-number">1</span> <strong>Crea tu personaje</strong> - Elige una raza (humano, elfo, enano...), una clase (guerrero, mago, pícaro...) y define su historia.</li>
+                        <li><span class="step-number">2</span> <strong>Únete a un grupo</strong> - Forma un equipo con otros jugadores, cada uno con personajes únicos.</li>
+                        <li><span class="step-number">3</span> <strong>Vive aventuras</strong> - El Dungeon Master (DM) guiará la historia mientras tú decides las acciones de tu personaje.</li>
+                        <li><span class="step-number">4</span> <strong>Lanza los dados</strong> - Los dados determinan el resultado de tus acciones durante la aventura.</li>
+                    </ol>
+                    
+                    <a href="creator.html" class="hero-btn"><i class="fas fa-dice-d20 fa-fw"></i> Crear Mi Personaje</a>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="https://i.imgur.com/5X6Qz9j.jpg" alt="Aventura épica" class="hero-img">
+                <img src="https://es.gizmodo.com/app/uploads/2024/06/42cd02e18f83132f844e230f5e9b16a2.jpg" alt="Aventura épica" class="hero-img">
             </div>
         </section>
 
@@ -40,31 +53,36 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-user-plus"></i>
+                        <i class="fas fa-hat-wizard"></i>
                     </div>
                     <h3 class="feature-title">Crea Personajes Únicos</h3>
-                    <p class="feature-text">Personaliza cada aspecto de tu personaje con nuestro sistema avanzado.</p>
+                    <p class="feature-text">Personaliza cada aspecto de tu personaje con nuestro sistema avanzado. Define su historia, habilidades y destino.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-dragon"></i>
                     </div>
                     <h3 class="feature-title">Razas y Clases</h3>
-                    <p class="feature-text">Elige entre todas las razas y clases oficiales de D&D 5e.</p>
+                    <p class="feature-text">Elige entre todas las razas y clases oficiales de D&D 5e. Elfos, enanos, humanos, magos, guerreros y mucho más.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 class="feature-title">Equipamiento Completo</h3>
-                    <p class="feature-text">Selecciona armas, armaduras y objetos mágicos para tu personaje.</p>
+                    <p class="feature-text">Selecciona armas, armaduras y objetos mágicos para tu personaje. ¡Prepárate para cualquier desafío!</p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p class="footer-text">© 2023 Generador de Personajes - Calabozos y Dragones</p>
+        <p class="footer-text">© 2025 Generador de Personajes - Calabozos y Dragones By Jersson Fuentes </p>
+        <div class="footer-icons">
+            <i class="fas fa-dice-d20"></i>
+            <i class="fas fa-dragon"></i>
+            <i class="fas fa-scroll"></i>
+        </div>
     </footer>
 
     <script src="js/auth.js"></script>

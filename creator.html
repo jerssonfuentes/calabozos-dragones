@@ -3,96 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creador - Calabozos y Dragones</title>
+    <title>Creador de Personajes D&D</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Pirata+One&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/creator.css">
+    <link rel="icon" href="img/dnd-logo.png" type="image/png">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-brand">
-            <img src="https://i.imgur.com/JjQY9zX.png" alt="Logo" class="nav-logo">
-            <span>Calabozos y Dragones</span>
-        </div>
-        <div class="nav-links">
-            <a href="home.html" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
-            <a href="creator.html" class="nav-link active"><i class="fas fa-plus"></i> Crear Personaje</a>
-            <a href="gallery.html" class="nav-link"><i class="fas fa-users"></i> Mis Personajes</a>
-            <a href="#" id="logoutBtn" class="nav-link"><i class="fas fa-sign-out-alt"></i> Salir</a>
-        </div>
-        <button class="nav-toggle"><i class="fas fa-bars"></i></button>
-    </nav>
-
-    <main class="creator-container">
-        <h1 class="creator-title">Creador de Personajes</h1>
-        
-        <div class="creator-grid">
-            <div class="options-panel">
-                <div class="creator-section" id="basicSection">
-                    <h2 class="section-title"><i class="fas fa-user"></i> Información Básica</h2>
-                    <div class="form-group">
-                        <label for="charName">Nombre del Personaje</label>
-                        <input type="text" id="charName" class="form-input" placeholder="Ej: Aragorn">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="charGender">Género</label>
-                        <select id="charGender" class="form-input">
-                            <option value="male">Masculino</option>
-                            <option value="female">Femenino</option>
-                            <option value="other">Otro</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="creator-section" id="raceSection">
-                    <h2 class="section-title"><i class="fas fa-paw"></i> Raza</h2>
-                    <div class="search-box">
-                        <input type="text" id="raceSearch" class="search-input" placeholder="Buscar raza...">
-                        <i class="fas fa-search search-icon"></i>
-                    </div>
-                    <div class="options-list" id="raceList">
-                        <!-- Razas se cargarán dinámicamente -->
-                    </div>
-                </div>
-                
-                <div class="creator-section" id="classSection">
-                    <h2 class="section-title"><i class="fas fa-shield-alt"></i> Clase</h2>
-                    <div class="search-box">
-                        <input type="text" id="classSearch" class="search-input" placeholder="Buscar clase...">
-                        <i class="fas fa-search search-icon"></i>
-                    </div>
-                    <div class="options-list" id="classList">
-                        <!-- Clases se cargarán dinámicamente -->
-                    </div>
-                </div>
+    <div class="parchment-overlay"></div>
+    
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-container">
+                <img src="img/dnd-logo.png" alt="D&D Logo" class="dnd-logo">
             </div>
-            
-            <div class="preview-panel">
-                <div class="preview-card">
-                    <div class="preview-image">
-                        <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Preview" id="charImage" class="preview-img">
-                    </div>
-                    <div class="preview-details">
-                        <h2 id="previewName" class="preview-name">Nombre del Personaje</h2>
-                        <p id="previewRace" class="preview-text">Raza: No seleccionada</p>
-                        <p id="previewClass" class="preview-text">Clase: No seleccionada</p>
-                        <div class="stats-grid" id="statsPreview">
-                            <!-- Estadísticas se mostrarán aquí -->
+            <h1><i class="fas fa-dragon"></i> Creador de Personajes D&D</h1>
+            <div class="header-decoration">
+                <div class="decoration-line"></div>
+                <div class="decoration-symbol"><i class="fas fa-dice-d20"></i></div>
+                <div class="decoration-line"></div>
+            </div>
+        </header>
+
+        <main class="creator-container">
+            <!-- Panel de creación -->
+            <section class="creation-panel">
+                <!-- Pestañas de navegación -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-target="basic-info"><i class="fas fa-user"></i> Básico</button>
+                    <button class="tab-btn" data-target="race-selection"><i class="fas fa-paw"></i> Raza</button>
+                    <button class="tab-btn" data-target="class-selection"><i class="fas fa-shield-alt"></i> Clase</button>
+                </div>
+                
+                <!-- Información básica -->
+                <div class="tab-content active" id="basic-info">
+                    <div class="form-section">
+                        <h2><i class="fas fa-user"></i> Información Básica</h2>
+                        <div class="form-group">
+                            <label for="charName">Nombre del Personaje</label>
+                            <input type="text" id="charName" placeholder="Ej: Aragorn">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="charGender">Género</label>
+                                <select id="charGender">
+                                    <option value="male">Masculino</option>
+                                    <option value="female">Femenino</option>
+                                    <option value="other">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group half">
+                                <label for="charAlignment">Alineamiento</label>
+                                <select id="charAlignment">
+                                    <option value="lg">Legal Bueno</option>
+                                    <option value="ng">Neutral Bueno</option>
+                                    <option value="cg">Caótico Bueno</option>
+                                    <option value="ln">Legal Neutral</option>
+                                    <option value="n">Neutral</option>
+                                    <option value="cn">Caótico Neutral</option>
+                                    <option value="le">Legal Malvado</option>
+                                    <option value="ne">Neutral Malvado</option>
+                                    <option value="ce">Caótico Malvado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="charBackground">Trasfondo</label>
+                            <select id="charBackground">
+                                <option value="acolyte">Acólito</option>
+                                <option value="criminal">Criminal</option>
+                                <option value="folk-hero">Héroe Popular</option>
+                                <option value="noble">Noble</option>
+                                <option value="sage">Sabio</option>
+                                <option value="soldier">Soldado</option>
+                            </select>
+                        </div>
+                        <div class="navigation-buttons">
+                            <button class="next-btn" data-target="race-selection">Siguiente <i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
-                
-                <button id="saveCharBtn" class="save-btn">
-                    <i class="fas fa-save"></i> Guardar Personaje
-                </button>
-            </div>
-        </div>
-    </main>
+
+                <!-- Selección de raza -->
+                <div class="tab-content" id="race-selection">
+                    <div class="form-section">
+                        <h2><i class="fas fa-paw"></i> Raza</h2>
+                        <div class="search-box">
+                            <input type="text" id="raceSearch" placeholder="Buscar razas...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="options-grid" id="raceList">
+                            <!-- Razas se cargarán aquí -->
+                            <div class="loading">
+                                <i class="fas fa-spinner fa-pulse"></i> Cargando razas...
+                            </div>
+                        </div>
+                        <div class="race-details" id="raceDetails">
+                            <h3>Detalles de la Raza</h3>
+                            <p>Selecciona una raza para ver sus detalles.</p>
+                        </div>
+                        <div class="navigation-buttons">
+                            <button class="prev-btn" data-target="basic-info"><i class="fas fa-chevron-left"></i> Anterior</button>
+                            <button class="next-btn" data-target="class-selection">Siguiente <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selección de clase -->
+                <div class="tab-content" id="class-selection">
+                    <div class="form-section">
+                        <h2><i class="fas fa-shield-alt"></i> Clase</h2>
+                        <div class="search-box">
+                            <input type="text" id="classSearch" placeholder="Buscar clases...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="options-grid" id="classList">
+                            <!-- Clases se cargarán aquí -->
+                            <div class="loading">
+                                <i class="fas fa-spinner fa-pulse"></i> Cargando clases...
+                            </div>
+                        </div>
+                        <div class="class-details" id="classDetails">
+                            <h3>Detalles de la Clase</h3>
+                            <p>Selecciona una clase para ver sus detalles.</p>
+                        </div>
+                        <div class="navigation-buttons">
+                            <button class="prev-btn" data-target="race-selection"><i class="fas fa-chevron-left"></i> Anterior</button>
+                            <button class="finish-btn">Finalizar <i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel de vista previa -->
+            <section class="preview-panel">
+                <div class="preview-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-eye"></i> Vista Previa</h3>
+                    </div>
+                    <div class="character-image">
+                        <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Personaje" id="charImage">
+                        <div class="image-overlay">
+                            <button class="change-image-btn"><i class="fas fa-camera"></i></button>
+                        </div>
+                    </div>
+                    <div class="character-info">
+                        <h2 id="previewName">Nombre del Personaje</h2>
+                        <div class="char-details">
+                            <div class="detail-item">
+                                <i class="fas fa-paw"></i>
+                                <span id="previewRace">No seleccionada</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span id="previewClass">No seleccionada</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-section">
+                            <h3><i class="fas fa-chart-bar"></i> Estadísticas</h3>
+                            <div class="stats-grid" id="statsContainer">
+                                <!-- Stats se generarán aquí -->
+                                <div class="stat-item">
+                                    <div class="stat-circle">
+                                        <span class="stat-value">10</span>
+                                    </div>
+                                    <label>FUE</label>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-circle">
+                                        <span class="stat-value">10</span>
+                                    </div>
+                                    <label>DES</label>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-circle">
+                                        <span class="stat-value">10</span>
+                                    </div>
+                                    <label>CON</label>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-circle">
+                                        <span class="stat-value">10</span>
+                                    </div>
+                                    <label>INT</label>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-circle">
+                                        <span class="stat-value">10</span>
+                                    </div>
+                                    <label>SAB</label>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-circle">
+                                        <span class="stat-value">10</span>
+                                    </div>
+                                    <label>CAR</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="saveBtn" class="save-button">
+                            <i class="fas fa-save"></i> Guardar Personaje
+                        </button>
+
+                        <div class="share-options">
+                            <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                            <button class="print-btn"><i class="fas fa-print"></i></button>
+                            <button class="export-btn"><i class="fas fa-file-export"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2025 Creador de Personajes D&D | Todos los derechos reservados</p>
+        </footer>
+    </div>
 
     <script src="js/api.js"></script>
-    <script src="js/storage.js"></script>
     <script src="js/creator.js"></script>
-    <script src="js/auth.js"></script>
 </body>
 </html>
